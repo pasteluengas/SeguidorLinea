@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Elaboracion de seguidor de linea</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Seguidor de linea: proceso de Elaboracion</h1>
+        <b>Nicolas Luengas | Jonathan Archila | Alejandro</b>
+        <hr>
+        <p>
+            La maquina seguidora de linea fue realizado a lo largo del semestre, 
+        </p>
+
+        <h2>Historial del funcionamiento</h2>
+        <p>El proyecto fue mutando constantemente de método de funcionamiento, debido a las diferrentes condiciones en las que nos encontrabamos y lo que podiamos conseguir en ese momento.</p>
+        <h3>Compuertas lógicas: </h3>
+        <p>El diseño temprando del proyecto consistia en compuertas lógicas ensambladas y dos sensores infrarrojos, este diseño temprano cumplia con la funcion de seguir lineas, sin embargo tenia una limitacion: El manejo del tiempo</p>
+        <p>Una compuerta no tiene control del tiempo, opera en tiempo real, recibe informacion y la entrega procesada al instante, no hay latencia o tiempo de espera, lo que haria imposible implementar la futura funcion de evadir obstaculos, que requiere tener control sobre el tiempo (detenerse, moverse hacia un lado por un tiempo determinado, volver a la linear, continuar el recorrido).</p>
+
+        <h3>Transistores, microcontroladores y multiplexores</h3>
+        <p>El diseño presentado en la salida de campo operaba con transistores funcionando como compuertas logicas, al ser compuertas hechas a mano eran de mayor tamaño por lo que se permitian manipular mas facilmente (contrario a las compuertas preensambladas del diseño anterior, que al ser tan pequeñas dificultaban la soldadura y el manejo de los cables). El objetivo en el momento seria usar transistores para el movimiento en tiempo real de deteccion de linea, un microcontrolador para realizar movimientos que dependan del tiempo, y un multiplexor que permitiria definir cual de estos dos sistemas tendrian el control de los motores.</p>
+        <p>Este diseño, si bien permitia implementar los temas de informatica y de diseño digital, y ser bastante modular, era engorroso sabiendo que todo podia realizarse facilmente en un microcontrolador.</p>
+
+        <h2>Subtitulo or sm</h2>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+    </div>
+</body>
+</html>

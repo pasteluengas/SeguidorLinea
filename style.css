@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@1..144,1..1000&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body {
+    background-color: antiquewhite;
+    color: #2B3A47;
+    font-family: "Google Sans Flex", sans-serif;
+
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "IBM Plex Mono", sans-serif;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+p, span, b {
+    font-size: 20px;
+}
+
+.container {
+    max-width: 700px;
+}
+
+hr {
+  border: none;             /* Elimina el borde 3D por defecto del navegador */
+  height: 5px;              /* Grosor de la línea */
+  background-color: #2B3A47;/* Color de la línea */
+  width: 100%;               /* Ancho (puede ser en % o px) */
+  margin: 20px auto;        /* Centrado horizontal y espacio vertical */
+}
+
+@media (max-width: 720px){
+    body {
+        padding-top: 0px;
+        padding: 60px;
+    }
+}
