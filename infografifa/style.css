@@ -31,7 +31,7 @@ h3 span {
     color: #9AC2D1;
 }
 
-p, span, b {
+p, b {
     font-size: 30px;
 }
 
@@ -111,13 +111,33 @@ body:has(#diap4:hover) {
     color: #729B79;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.cursor {
+  animation: parpadeo 0.2s infinite;
+}
+
+@keyframes parpadeo {
+  0%, 100% {
+    opacity: 1; /* Visible al inicio y al final del ciclo */
+  }
+  50% {
+    opacity: 0; /* Invisible a la mitad del ciclo */
+  }
 }
 
 @media (max-width: 800px){
     body {
         padding-top: 0px;
         padding: 60px;
+    }
+
+    .diap {
+        height: 100dvh;
+        padding: 70px;
+        max-width: 1200px;
     }
 }
