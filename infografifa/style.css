@@ -1,0 +1,123 @@
+/* https://coolors.co/f3e8ee-bacdb0-729b79-475b63-2e2c2f */
+
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@1..144,1..1000&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&display=swap');
+
+body {
+    background-color: #2E2C2F;
+    color: #F3E8EE;
+    font-family: "Google Sans Flex", sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+    transition: background-color 0.1s ease-in-out;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "IBM Plex Mono", sans-serif;
+}
+
+
+h1 { font-size: 60px; }
+h2 { font-size: 35px; }
+h3 { font-size: 30px; }
+h4 { font-size: 25px; }
+h5 { font-size: 25px; }
+h6 { font-size: px; }
+
+h3 span {
+    color: #9AC2D1;
+}
+
+p, span, b {
+    font-size: 30px;
+}
+
+.container {
+    max-width: 700px;
+}
+
+hr {
+  border: none;             /* Elimina el borde 3D por defecto del navegador */
+  height: 5px;              /* Grosor de la línea */
+  background-color: #729B79;/* Color de la línea */
+  width: 100%;               /* Ancho (puede ser en % o px) */
+  margin: 20px auto;        /* Centrado horizontal y espacio vertical */
+}
+
+.codeblock {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.codeblock pre {
+    font-family: "Google Sans Code", monospace;
+
+}
+
+.diap {
+    height: 100dvh;
+    padding: 50px;
+    max-width: 1200px;
+}
+
+#diap1 {
+    position: sticky;
+    top: 0px;
+}
+
+#diap2 {
+    position: sticky;
+    top: 0px;
+
+    background-color: #729B79;
+    color: #2E2C2F;
+}
+body:has(#diap2:hover) {
+    background-color: #729B79;
+}
+
+#diap3 {
+    position: sticky;
+    top: 0px;
+
+    background-color: #2E2C2F;
+    color: #729B79;
+}
+
+
+#diap4 {
+    position: sticky;
+    top: 0px;
+
+    background-color: #9AC2D1;
+    color: #2E2C2F;
+}
+body:has(#diap4:hover) {
+    background-color: #9AC2D1;
+}
+
+
+#diap-manos {
+    position: sticky;
+    top: 0px;
+
+    background-color: #2E2C2F;
+    color: #729B79;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 800px){
+    body {
+        padding-top: 0px;
+        padding: 60px;
+    }
+}
