@@ -14,11 +14,50 @@
         </div>
         <div class="diap" id="diap2">
             <h1>Diseños tempranos</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque totam cum nesciunt soluta amet illum pariatur accusamus, aliquam commodi tempore eius optio magnam quam expedita, cupiditate, sapiente officiis quibusdam id.</p>
+            <div class="diapotype-1">
+            	<div class="side1">
+				<p>
+		            Nuestro diseño original se basaba completamente en compuertas lógicas.
+		            <b>Este diseño no podía evadir obstaculos, porque una compuerta lógica
+		            procesa la información que recibe en tiempo real, no tiene dominio sobre
+		            el tiempo, </b> necesario para que el robot se detenga, gire, avance, vuelva
+		            a girar, etc.
+	            </p>
+	            <p>Otra enorme desventaja era que las compuertas eran ensambladas, por lo que mas sensibles y difíciles de manejar en una protoboard.</p>
+				</div>
+				<div class="side-2">
+					<img src="https://lh3.googleusercontent.com/a-/ALV-UjXyFJ3TgSjY43oA5FR3LUqkf_WzFtt20c46FfYMeXSFdEk8UKci">
+				</div>
+            </div>
         </div>
         <div class="diap" id="diap3">
+           <h1>Diseños tempranos</h1>
+           <div class="diapotype-1">
+           		<div class="side1">
+					<p>
+						El segundo diseño, mostrado en la salida de campo, se optimizo la lógica y usaba transistores
+						configurados como compuertas NOT, al ser compuertas hechas mano eran mas grandes
+						y mucho mas faciles de manejar, contrario al diseño anterior. Se pretendía usar un multiplexor
+						para poder ceder control a un microcontrolador, que permitiría tener control sobre el tiempo
+						a la hora de detectar un obstáculo.
+		            </p>
+		            <p> Sin embargo, este diseño, <s>además de no funcionar en la salida de campo,</s> era sumamente engorroso y
+		            ocupaba mucho espacio teniendo en cuenta que un microcontrolador puede cumplir con todas esas funciones
+		            por si solo.</p>
+				</div>
+				<div class="side-2">
+					<img src="https://lh3.googleusercontent.com/a-/ALV-UjXyFJ3TgSjY43oA5FR3LUqkf_WzFtt20c46FfYMeXSFdEk8UKci">
+				</div>
+           </div>
+                </div>
+        <div class="diap" id="diap3">
             <h1>Diseño final</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati dolorum tempora sunt, minus esse vel accusamus quisquam et! Nostrum, dicta placeat? Placeat nemo quisquam enim unde, iure modi maiores voluptatibus.</p>
+            <p>
+				El diseño final concluyó en el salto completo de lógica cableada a lógica de programacion por medio de un microcontrolador,
+				<s>diseño que yo estaba pasivamente evitanto porque quería sobrecomplicarme,</s> esto redujo enormemente el tamaño, la complejidad
+				del circuito, y nos dió total dominio sobre el tiempo. La lógica básica con compuertas se mantuvo intacta y se reescribió en forma
+				de código, lo que hace que el código esté optimizado y consuma menos recursos que un algoritmo más complejo.
+			</p>
         </div>
         <div class="diap" id="diap4">
             <h1>Costos</h1>
@@ -27,7 +66,7 @@
 
         <div class="diap" id="diap-manos">
             <h1>Manos humanas hicieron esta infografía.</h1>
-            <small>*Le pedi ayuda a una o dos cosas del código a ChatGPT</small>
+            <small>*Le pedí ayuda a una o dos cosas del código en html a ChatGPT</small>
         </div>
     </div>
 </body>
