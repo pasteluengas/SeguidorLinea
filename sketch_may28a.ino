@@ -9,10 +9,10 @@
 #include <Bonezegei_HCSR04.h>
 
 // DEFINIENDO PINES Y ESTADOSS
-#define IN1 5
-#define IN2 6
-#define IN3 7
-#define IN4 8
+#define IN1 4
+#define IN2 5
+#define IN3 6
+#define IN4 7
 
 #define SensorIzq 9
 #define SensorDer 10
@@ -76,14 +76,15 @@ int state = SIGUIENDOLINEA;
 void loop() {
     if(state == SIGUIENDOLINEA) {
       int newvals[4] = {
-      !(digitalRead(SensorDer)), // IN1
-      (digitalRead(SensorDer)), // IN2
-      !(digitalRead(SensorIzq)), // IN3
-      (digitalRead(SensorIzq)) // IN4
+      (digitalRead(SensorDer)), // IN1
+      !(digitalRead(SensorDer)), // IN2
+      (digitalRead(SensorIzq)), // IN3
+      !(digitalRead(SensorIzq)) // IN4
       };
       PuenteH_Update(newvals);
     }
-    
+
+    /*
     state = Look4Obs();
     
     if (state == EVADIENDOOBSTACULO) {
@@ -101,6 +102,6 @@ void loop() {
 
        int valus4[4] = {0, 1, 0, 1,};
        PuenteH_Update(valus4);
-    }
+    }*/
     delay(50);
 }
