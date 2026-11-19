@@ -4,11 +4,30 @@
  * 
  * PARA QUE CADA SENSOR DIRIGA LA RUEDA DEL LADO OPUESTO
  * 
+ * 
+ *  10 -> adelante
+ *  01 -> atras
+ *  [por lo visto]
+ *  
+ *  Para que evada obstaculos:
+ *  0. PENDIENTE AJUSTAR VELOCIDAD
+ *  1. Cambiar timido a true
+ *  2. Volver a compilar
+ *
+ *
+ * 
  */
 
 #include <Bonezegei_HCSR04.h>
 
 // DEFINIENDO PINES Y ESTADOSS
+
+bool timido = false;
+
+int TIEMPO_ESPERA = 200;
+int TIEMPO_ESPERA_TIMIDO = 200;
+#define VELOCIDAD 0.0214 // en cm/ms
+
 #define IN1 4
 #define IN2 5
 #define IN3 6
@@ -20,10 +39,17 @@
 #define SIGUIENDOLINEA 0
 #define EVADIENDOOBSTACULO 1
 
-#define ECHO_PIN 11
-#define TRIGGER_PIN 13
+#define ECHO_PIN 3
+#define TRIGGER_PIN 12
 
-#define CMSIBILIDAD 13
+#define CMSIBILIDAD 19
+#define PISOCM 11
+
+// DEFINIENDOGIROS
+#define M90GRADOS_MS 275
+#define CMAMOVER 7.5
+
+#define MSTOMOVE (int) (CMAMOVER / VELOCIDAD)
 
 Bonezegei_HCSR04 ultrasonic(TRIGGER_PIN, ECHO_PIN);
 /*
@@ -56,11 +82,12 @@ void PuenteH_Update(int newValues[]) {
 
 // EVASOR DE OBSTACULOS
 int Look4Obs() {
-  // getDistance() te masturba en centimetros
+  //getDistance() te masturba en centimetros
   int d=ultrasonic.getDistance();
-  if ((d <= CMSIBILIDAD)) return EVADIENDOOBSTACULO;
+  if ((d <= CMSIBILIDAD) && (d > PISOCM)) return EVADIENDOOBSTACULO;
   return SIGUIENDOLINEA;
 }
+
 
 void setup() {
   pinMode(IN1, OUTPUT);
@@ -68,8 +95,12 @@ void setup() {
   pinMode(IN3, OUTPUT);
   pinMode(IN4, OUTPUT);
 
+  pinMode(13, OUTPUT);
+
   pinMode(SensorIzq, INPUT);
   pinMode(SensorDer, INPUT);
+
+  if (timido) TIEMPO_ESPERA = TIEMPO_ESPERA_TIMIDO;
 }
 
 int state = SIGUIENDOLINEA;
@@ -84,24 +115,47 @@ void loop() {
       PuenteH_Update(newvals);
     }
 
-    /*
+    if (!timido) goto vetealamierda;
+
     state = Look4Obs();
     
     if (state == EVADIENDOOBSTACULO) {
-       int valus[4] = {1, 1, 1, 1,};
+       digitalWrite(13, HIGH);
+      
+       int valus[4] = {1, 0, 0, 1,};
        PuenteH_Update(valus);
-       delay(2000);
+       delay(M90GRADOS_MS);
+
+       int valus1[4] = {1, 0, 1, 0};
+       PuenteH_Update(valus1);
+       delay(MSTOMOVE);
 
        int valus2[4] = {0, 1, 1, 0,};
        PuenteH_Update(valus2);
-       delay(2000);
+       delay(M90GRADOS_MS);
 
-       int valus3[4] = {1, 0, 0, 1,};
+       int valus3[4] = {1, 0, 1, 0};
        PuenteH_Update(valus3);
-       delay(2000);
+       delay(MSTOMOVE);
 
-       int valus4[4] = {0, 1, 0, 1,};
+
+       int valus4[4] = {0, 1, 1, 0};
        PuenteH_Update(valus4);
-    }*/
-    delay(50);
+       delay(M90GRADOS_MS);
+
+       int valus5[4] = {1, 0, 1, 0};
+       PuenteH_Update(valus5);
+       delay(MSTOMOVE);
+
+       int valus6[4] = {1, 0, 0, 1,};
+       PuenteH_Update(valus6);
+       delay(M90GRADOS_MS);
+
+
+       state = SIGUIENDOLINEA;
+       digitalWrite(13, LOW);
+    }
+
+    vetealamierda:
+    delay(TIEMPO_ESPERA);
 }
